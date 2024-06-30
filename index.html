@@ -1,0 +1,49 @@
+
+<html>
+<head>
+    <title>Link Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input[type="text"], input[type="url"], button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .generated-link {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Link Generator</h2>
+        <form id="linkForm">
+            <input id="url" placeholder="Enter URL" required="" type="url" />
+            <input id="params" placeholder="Enter Parameters (key=value&amp;key2=value2)" required="" type="text" />
+            <button type="submit">Generate Link</button>
+        </form>
+        <div class="generated-link" id="generatedLink"></div>
+    </div>
+
+    <script>
+        document.getElementById('linkForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const url = document.getElementById('url').value;
+            const params = document.getElementById('params').value;
+            const generatedLink = `${url}?${params}`;
+            document.getElementById('generatedLink').textContent = generatedLink;
+        });
+    </script>
+</body>
+</html>
