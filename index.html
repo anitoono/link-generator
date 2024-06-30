@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html>
 <head>
     <title>Link Generator</title>
@@ -16,6 +16,15 @@
             padding: 10px;
             margin: 10px 0;
         }
+        button {
+            background-color: lightgreen;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: green;
+        }
         .generated-link {
             margin-top: 20px;
             padding: 10px;
@@ -29,11 +38,11 @@
     <div class="container">
         <h2>Link Generator</h2>
         <form id="linkForm">
-            <input id="url" placeholder="Enter URL" required="" type="url" />
-            <input id="params" placeholder="Enter Parameters (key=value&amp;key2=value2)" required="" type="text" />
+            <input type="url" id="url" placeholder="Enter URL" required>
+            <input type="text" id="params" placeholder="Enter Parameters (key=value&key2=value2)" required>
             <button type="submit">Generate Link</button>
         </form>
-        <div class="generated-link" id="generatedLink"></div>
+        <div id="generatedLink" class="generated-link"></div>
     </div>
 
     <script>
